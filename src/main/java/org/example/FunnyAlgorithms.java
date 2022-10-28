@@ -38,9 +38,9 @@ public class FunnyAlgorithms {
 
     /**
      * Traditional Selection Sort
-     *
-     * @param array Array to be sorted
+     *  @param array Array to be sorted
      * @param order Direction to sort the array (0:Ascending, 1:Descending)
+     * @return
      */
     public void selectionSort(int[] array, int order) {
 
@@ -48,7 +48,7 @@ public class FunnyAlgorithms {
             throw new IllegalArgumentException("L'ordine può essere 0 o 1.");
         }
 
-        for (int i = 0; i < array.length - 2; i++) {
+        for (int i = 0; i < array.length - 1; i++) {
             int min = i;
             for (int j = i + 1; j < array.length; j++) {
                 boolean orderCondition = order == 0 ? array[j] > array[min] : array[j] < array[min];
@@ -58,6 +58,7 @@ public class FunnyAlgorithms {
             }
             swap(array, min, i);
         }
+
     }
 
     /**
