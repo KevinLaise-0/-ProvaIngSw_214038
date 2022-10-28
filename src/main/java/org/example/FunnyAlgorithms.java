@@ -1,5 +1,7 @@
 package org.example;
 
+import static java.lang.Integer.parseInt;
+
 public class FunnyAlgorithms {
     /**
      * Binary Search è un algoritmo di ricerca per trovare la posizione di un
@@ -69,7 +71,20 @@ public class FunnyAlgorithms {
      * @throws UnsupportedOperationException
      */
     public int stringToIntConverter(String number) throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("To be implemented");
+        int n = 0;
+        for (int i = 0; i < number.length(); i++)
+        {
+            char c = number.charAt(i);
+            if (!(c >= '0' && c <= '9')) {
+                throw new IllegalArgumentException("L'elemento deve essere un numero");
+            }
+            n*=10;
+            n+=parseInt(String.valueOf(c));
+            if(n > 32767 || n <-32767){
+                throw new IllegalArgumentException("L'elemento sfora i margini");
+            }
+        }
+        return n;
     }
 
 }
