@@ -11,7 +11,7 @@ import static org.junit.Assert.assertTrue;
  */
 public class FunnyAlgorithmsTest
 {
-    private static String sTi;
+    private static int[] array = new int[]{1,4,5,8,12,34,65,78,89,99};
     FunnyAlgorithms f = new FunnyAlgorithms();
 
     @Test
@@ -19,10 +19,15 @@ public class FunnyAlgorithmsTest
     {
         assertTrue( true );
     }
+
     @BeforeClass
     public static void beforeClass(){
-        System.out.println("inizio con i test");
 
+        System.out.println("Inizio con i test");
+        /*
+        for(int i=0;i< array.length;i++){
+            System.out.println(array[i]);
+        }*/
     }
 
     @Test
@@ -38,13 +43,24 @@ public class FunnyAlgorithmsTest
 
     @Test(expected = IllegalArgumentException.class)
     public void shouldBigNumber(){
-        System.out.println("shouldBigLowNumberEcxeption");
+        System.out.println("shouldBigNumberEcxeption");
         f.stringToIntConverter("344444");
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void shouldLowNumber(){
-        System.out.println("shouldBigLowNumberEcxeption");
+        System.out.println("shouldLowNumberEcxeption");
         f.stringToIntConverter("-555555");
     }
+
+    @Test
+    public void shouldFindNumber(){
+        assertEquals(1,f.binarySearch(array,4));
+    }
+
+    @Test
+    public void shouldMidWrong(){
+        assertEquals(-1,f.binarySearch(array,2));
+    }
+
 }
