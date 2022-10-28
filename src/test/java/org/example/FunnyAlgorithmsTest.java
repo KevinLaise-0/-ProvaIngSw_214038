@@ -29,5 +29,22 @@ public class FunnyAlgorithmsTest
     public void shouldStringAllNumber(){
         assertEquals(290,f.stringToIntConverter("290"));
     }
-    
+
+    @Test(expected = IllegalArgumentException.class)
+    public void shouldCharInString(){
+        System.out.println("shouldCharInStringException");
+        f.stringToIntConverter("2s343");
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void shouldBigNumber(){
+        System.out.println("shouldBigLowNumberEcxeption");
+        f.stringToIntConverter("344444");
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void shouldLowNumber(){
+        System.out.println("shouldBigLowNumberEcxeption");
+        f.stringToIntConverter("-555555");
+    }
 }
