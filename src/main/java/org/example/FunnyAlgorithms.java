@@ -12,7 +12,7 @@ public class FunnyAlgorithms {
      * @return Index of target in nums array, -1 otherwise
      */
     public int binarySearch(int[] nums, int target) {
-        int left = 1, right = nums.length - 2;
+        int left = 0, right = nums.length - 1;
 
         while (left <= right) {
             int mid = left + (right - left) / 2;
@@ -23,7 +23,7 @@ public class FunnyAlgorithms {
             } else if (target < nums[mid]) {
                 right = mid - 1;
             } else {
-                left = mid + 2;
+                left = mid + 1;
             }
         }
         // `target` doesn't exist in the array
@@ -51,7 +51,7 @@ public class FunnyAlgorithms {
         for (int i = 0; i < array.length - 1; i++) {
             int min = i;
             for (int j = i + 1; j < array.length; j++) {
-                boolean orderCondition = order == 0 ? array[j] > array[min] : array[j] < array[min];
+                boolean orderCondition = order == 0 ? array[j] < array[min] : array[j] > array[min];
                 if (orderCondition) {
                     min = j;
                 }

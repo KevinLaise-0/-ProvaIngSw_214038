@@ -50,79 +50,80 @@ public class FunnyAlgorithmsTest
 
     @Test
     public void shouldStringAllNumber(){
-        DateTime ora = new DateTime();
-        System.out.println(ora);
+        //DateTime ora = new DateTime();
+        //System.out.println(ora);
         assertEquals(290,f.stringToIntConverter("290"));
-        System.out.println(ora);
+        //System.out.println(ora);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void shouldCharInString(){
-        DateTime ora  = new DateTime();
-        System.out.println(ora);
+        //DateTime ora  = new DateTime();
+        //System.out.println(ora);
         System.out.println("shouldCharInStringException");
         f.stringToIntConverter("2s343");
-        System.out.println(ora);
+        //System.out.println(ora);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void shouldBigNumber(){
-        DateTime ora = new DateTime();
-        System.out.println(ora);
+        //DateTime ora = new DateTime();
+        //System.out.println(ora);
         System.out.println("shouldBigNumberEcxeption");
         f.stringToIntConverter("344444");
-        System.out.println(ora);
+        //System.out.println(ora);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void shouldLowNumber(){
-        DateTime ora = new DateTime();
-        System.out.println(ora);
+        //DateTime ora = new DateTime();
+        //System.out.println(ora);
         System.out.println("shouldLowNumberEcxeption");
         f.stringToIntConverter("-555555");
-        System.out.println(ora);
+        //System.out.println(ora);
     }
 
     @Test
     public void shouldFindNumber(){
-        DateTime ora = new DateTime();
-        System.out.println(ora);
-        assertEquals(1,f.binarySearch(array,4));
-        System.out.println(ora);
+        //DateTime ora = new DateTime();
+        //System.out.println(ora);
+        //{1,4,5,8,12,34,65,78,89,99};
+        assertEquals(9,f.binarySearch(array,99));
+        //System.out.println(ora);
     }
 
     @Test
     public void shouldMidWrong(){
-        DateTime ora = new DateTime();
-        System.out.println(ora);
+        //DateTime ora = new DateTime();
+        //System.out.println(ora);
         assertEquals(-1,f.binarySearch(array,2));
-        System.out.println(ora);
+        //System.out.println(ora);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void shouldSelectionSortOrderWrongInsert(){
-        DateTime ora = new DateTime();
-        System.out.println(ora);
+        //DateTime ora = new DateTime();
+        //System.out.println(ora);
         System.out.println("ExceptionInsertOrder");
         f.selectionSort(array,2);
-        System.out.println(ora);
+        //System.out.println(ora);
     }
 
     @Test
     public void shouldOrderOne(){
-        DateTime ora = new DateTime();
-        System.out.println(ora);
+        //DateTime ora = new DateTime();
+        //System.out.println(ora);
         f.selectionSort(anorderA,1);
-        assertArrayEquals(orderArrayOne,anorderA);
-        System.out.println(ora);
+        assertArrayEquals(orderArrayZero,anorderA);
+        //System.out.println(ora);
     }
 
     @Test
     public void shouldOrderZero(){
-        DateTime ora = new DateTime();
-        System.out.println(ora);
+       //DateTime ora = new DateTime();
+        //System.out.println(ora);
         f.selectionSort(anorderA,0);
-        assertArrayEquals(orderArrayZero,anorderA);
-        System.out.println(ora);
+        assertArrayEquals(orderArrayOne,anorderA);
+        //System.out.println(ora);
     }
 }
